@@ -642,16 +642,14 @@ aspect3d(1, 1, 1)
 light3d(theta = 45, phi = 30, viewpoint.rel = TRUE)
 light3d(theta = 135, phi = 20, viewpoint.rel = TRUE)
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Paramètres d'échelle : tailles des points adaptées aux dimensions du tore
-# ─────────────────────────────────────────────────────────────────────────────
+
 dim_tore <- c(torex, torey, torez)
 ref_tore <- min(dim_tore)
 
 rayon_proie <- 0.020 * ref_tore
 rayon_pred  <- 0.050 * ref_tore
 
-# ─── Fond et axes permanents ──────────────────────────────────────────────
+
 bg3d(color = "#1a5fa8")
 
 static_ids <- c(
@@ -659,10 +657,10 @@ static_ids <- c(
   grid3d(c("x", "y", "z"), col = adjustcolor("white", alpha.f = 0.25), lwd = 0.4)
 )
 
-# ─── Labels dynamiques ────────────────────────────────────────────────────
+
 labels <- paste0("t = ", seq_len(T), " | Captures totales = ", capture_totale)
 
-# ─── Ajout de tous les objets de toutes les frames ────────────────────────
+
 frame_ids <- vector("list", T)
 
 for (t in seq_len(T)) {
